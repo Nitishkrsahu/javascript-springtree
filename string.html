@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function VerifyName(){
+            var uname = document.getElementById("txtName").value;
+            document.querySelector("p").innerHTML = uname;
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onkeyup="VerifyName()" id="txtName"></dd>
+
+    </dl>
+    <p></p>
+</body>
+</html>

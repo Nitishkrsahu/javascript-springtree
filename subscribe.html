@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var Subscribers = 21;
+        function bodyLoad(){
+            document.querySelector("p").textContent = Subscribers + " - Subscribers";
+
+        }
+        function SubscribeClick(){
+            var btnText = document.querySelector("button").innerHTML;
+            var btnClass = document.querySelector("button").className;
+            var para = document.querySelector("p");
+
+            document.querySelector("button").innerHTML = (btnText == "Subscribe") ? "Subscribed" : "Subscribe";
+            document.querySelector("button").className = (btnClass == "btn btn-dark bi bi-bell") ? "btn btn-danger bi bi-bell-fill" : "btn btn-dark bi bi-bell";
+
+            if(btnText == "Subscribe"){
+                Subscribers++; // subcribers = subcribers + 1 
+                para.textContent = Subscribers + " - Subscribers";
+            }
+            else{
+                Subscribers--;
+                para.textContent = Subscribers + " - subscribers";
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyLoad()">
+    <div class="mt-4">
+        <button onclick="SubscribeClick()" class="btn btn-dark bi bi-bell">Subscribe</button>
+    </div>
+    <p class="fs-3"></p>
+</body>
+</html>

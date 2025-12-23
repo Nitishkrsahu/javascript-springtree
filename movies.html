@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        function BookClick(){
+            document.getElementById("btnQuickBooking").style.display = "none";
+            document.getElementById("summaryConatiner").style.display = "block";
+
+            MovieName = document.getElementById("1stMovies").value;
+            MovieDate = document.getElementById("1stDate").value;
+            MovieCinema = document.getElementById("1stCinema").value;
+            MovieTime = document.getElementById("1stTime").value;
+
+            document.getElementById("lblMovie").innerText = MovieName;
+            document.getElementById("lblDate").innerText = MovieDate;
+            document.getElementById("lblCinema").innerText = MovieCinema;
+            document.getElementById("lblTime").innerText = MovieTime;
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <button id="btnQuickBooking" class="btn btn-primary" data-bs-target="#booking"
+        data-bs-toggle="modal">QuickBooking</button>
+    <div class="modal fade" id="booking">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="title">QuickBooking</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <nav class="d-flex justify-content-between p-2">
+                        <div>
+                            <select id="1stMovies" class="form-select">
+                                <option>Select Movie</option>
+                                <option>Dhurandar</option>
+                                <option>PK</option>
+                                <option>FamilyMan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="1stDate" class="form-select">
+                                <option>Select Movie</option>
+                                <option>Thu, 13 Dec</option>
+                                <option>Fri, 27 Dec</option>
+                                <option>Mon, 14 Jan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="1stCinema" class="form-select">
+                                <option>Select Cinema</option>
+                                <option>PVR</option>
+                                <option>INOX</option>
+                                <option>T-SERIES</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="1stTime" class="form-select">
+                                <option>Select Timing</option>
+                                <option>10:40 AM</option>
+                                <option>07:30 PM</option>
+                                <option>03:00 PM</option>
+                            </select>
+                        </div>
+                        <button id="btnBook" onclick="BookClick()" data-bs-dismiss="modal"
+                            class="btn btn-primary">book</button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="summaryConatiner" class="w-25" style="display: none;">
+        <h3>Booking Summary</h3>
+        <dl class="row">
+            <dt class="col-3">Movie</dt>
+            <dd class="col-9" id="lblMovie"></dd>
+            <dt class="col-3">Date</dt>
+            <dd class="col-9" id="lblDate"></dd>
+            <dt class="col-3">Cinema</dt>
+            <dd class="col-9" id="lblCinema"></dd>
+            <dt class="col-3">Timing</dt>
+            <dd class="col-9" id="lblTime"></dd>
+        </dl>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <script>
+        function bodyload(){
+            var string = new URLSearchParams(location.search);
+            document.querySelector("p").innerHTML = "You are searching for:" + string.get("search");
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>Results</h2>
+    <p></p>
+</body>
+</html>

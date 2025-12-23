@@ -1,0 +1,10 @@
+.container{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    border-radius: 5px;
+}
+body{
+    margin: 0;
+    padding: 0;
+}

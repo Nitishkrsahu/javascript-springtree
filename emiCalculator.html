@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./emi.js"></script>
+</head>
+
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="border border-1 p-4 rounded-3">
+        <h4>Calculate Home Loan Eligibility</h4>
+
+        <!-- Gross Income (Monthly) start -->
+        <div class="pt-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    Loan Amount
+                </div>
+                <div class="border border-1 px-3 py-1 rounded-1">
+                    <span>&#8377;</span><span id="loanTxt">100000</span>
+                </div>
+            </div>
+            <input type="range" class="form-range" min="100000" max="10000000" onchange="loanAmount()" id="loanInput"
+                step="100000" value="100000">
+            <div class="d-flex justify-content-between">
+                <div>
+                    &#8377;1L
+                </div>
+                <div>
+                    &#8377;1Cr
+                </div>
+            </div>
+        </div>
+        <!-- Gross Income (Monthly) end -->
+
+        <!-- Tenure (Years)  start -->
+        <div class="pt-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    Tenure (Years)
+                </div>
+                <div class="border border-1 px-3 py-1 rounded-1">
+                    <span id="tenureTxt">1</span>
+                </div>
+            </div>
+            <input type="range" class="form-range" min="1" max="30" onchange="tenure()" id="tenureInput"
+                step="1" value="1">
+            <div class="d-flex justify-content-between">
+                <div>
+                    1
+                </div>
+                <div>
+                    30
+                </div>
+            </div>
+        </div>
+        <!-- Tenure (Years) end -->
+
+        <!-- Interest Rate (% P.A.) starts -->
+        <div class="pt-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    Interest Rate (% P.A.)
+                </div>
+                <div class="border border-1 px-3 py-1 rounded-1">
+                    <span id="rateTxt">0.5</span><span>%</span>
+                </div>
+            </div>
+            <input type="range" class="form-range" min="0.5" max="15" onchange="rate()" id="rateInput"
+                step="0.01" value="0.5">
+            <div class="d-flex justify-content-between">
+                <div>
+                    0.5
+                </div>
+                <div>
+                    15
+                </div>
+            </div>
+        </div>
+        <button onclick="calculateEmi()" class="btn btn-primary w-100 mt-3">Calculate EMI</button>
+    </div>
+
+    <div>
+        Monthly Home Loan EMI <span>&#8377;</span><span id="EMIAmount">0</span>
+    </div>
+
+</body>
+
+</html>
