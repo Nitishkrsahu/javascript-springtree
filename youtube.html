@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function WatchClick(){
+            var url = document.getElementById("txtUrl").value;
+
+            var code = url.slice(url.indexOf("=") + 1);
+            console.log(code);
+            // https://www.youtube.com/watch?v=d2pweewjzqA
+            var embedUrl = `https://www.youtube.com/embed/${code}`
+            document.getElementById("viedoFrame").src = embedUrl
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Viedo URL</dt>
+        <dd><input type="text" placeholder="URL" size="30" id="txtUrl"> <button onclick="WatchClick()">Watch</button></dd>
+        <dt>Preview</dt>
+        <dd>
+            <iframe width="600" height="300" id="viedoFrame"></iframe>
+        </dd>
+    </dl>
+</body>
+</html>

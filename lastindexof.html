@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyMail(){
+            var email = document.getElementById("txtMail").value;
+            var lblMail = document.getElementById("lblMail");
+
+            if(email.indexOf("@") < 2){            // i@gmail.com
+                lblMail.innerHTML = "Invalid Email".fontcolor('red');
+            }
+            else{
+                lblMail.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Your Email</dt>
+        <dd><input type="text" onblur="VerifyMail()" id="txtMail"></dd>
+        <dd id="lblMail"></dd>
+    </dl>
+</body>
+</html>

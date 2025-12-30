@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyPassword(){
+            var password = document.getElementById("txtPwd").value;
+            var lblPwd = document.getElementById("lblPwd");
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+            if(password.length == 0){
+                lblPwd.innerHTML = "password Required".fontcolor('red');
+            }else{
+                if(password.match(regExp)){
+                    lblPwd.innerHTML = "Strong Password".fontcolor('green');
+                }
+                else{
+                    if(password.length < 4){
+                        lblPwd.innerHTML = "Poor Password".fontcolor('red');
+                    }
+                    else{
+                        lblPwd.innerHTML = "weak Password".fontcolor('golden')
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Password</dt>
+        <dd><input type="password" onkeyup="VerifyPassword()" id="txtPwd"></dd>
+        <dd id="lblPwd"></dd>
+    </dl>
+</body>
+</html>
