@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var items = ["Home", "Shop", "Blog", "About"];
+        function bodyLoad(){
+            items.map(function(item, index){
+                var li = document.createElement("li");
+                li.innerHTML = item;
+                document.querySelector("ol").appendChild(li);
+
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = index;
+                document.querySelector("select").appendChild(option);
+                
+            })
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <ol>
+
+    </ol>
+    <select>
+
+    </select>
+    <nav>
+
+    </nav>
+    <ul>
+
+    </ul>
+</body>
+</html>

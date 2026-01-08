@@ -1,0 +1,27 @@
+<!-- <script>
+    var categories = ["All", "Electronics", "Fashion", "Footwear"];
+
+    document.write(categories.toString() + "<br>");
+    document.write(categories.join("=>") + "<br>");
+    document.write(categories.slice(1,2));
+</script> -->
+
+
+<!-- <script>
+    var sales = [50000, 64000, 23400, 34000, 61000, 45000];
+    var result = sales.filter(function(value){
+        return value >=60000;
+    })
+    document.write(result);
+</script> -->
+
+
+
+
+
+<script>
+    var sales = [50000, 64000, 23400, 34000, 61000, 45000];
+    for(var property in sales){
+        document.write(`[${property}] ${sales[property]} <br>`);
+    }
+</script>

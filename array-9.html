@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./array.js"></script>
+</head>
+<body class="container-fluid" onload="bodyLoad()">
+    <header class="bg-secondary text-white py-3">
+        <h3 class="text-center">To-Do</h3>
+        <p class="text-center">Your Appointment</p>
+    </header>
+    <div class="mt-3 w-50">
+        <div class="input-group">
+            <input type="text" id="txtTask" placeholder="New Appointment" class="form-control">
+            <button class="bi bi-calendar-date btn btn-primary" onclick="AddClick">Add</button>
+        </div>
+        <div class="my-4">
+            <label class="form-label fw-bold">Your Appointments <button onclick="SortAsc()" class="bi bi-sort-alpha-down btn btn-success"></button></label>
+            <select class="form-select" size="3" id="1stAppointments">
+
+            </select>
+            <label id="lblCount" class="form-label fw-bold"></label>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-warning bi bi-pen-fill">Edit</button>
+            <button class="btn btn-outline-danger bi bi-trash-fill">Clear ALL</button>
+        </div>
+    </div>
+</body>
+</html>

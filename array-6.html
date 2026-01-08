@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadClick(){
+            var img = document.createElement("img");
+            img.src = "./master.jpg";
+            img.width = "100"
+            img.height = "100";
+        document.getElementById("container").appendChild(img);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="LoadClick()">Load Image</button>
+    <br>
+    <br>
+    <div id="container"></div>
+</body>
+</html>
