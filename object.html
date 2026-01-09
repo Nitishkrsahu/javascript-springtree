@@ -1,0 +1,18 @@
+<script>
+var product = {
+ 
+ id : 1,
+ name : "Tv",
+ price : 45000,
+ cities: ["hyd", "Delhi"],
+ rating: {rate: 4.2, count: 5000},
+ qty: 2,
+ total: function(){
+        return this.qty * this.price;
+      }
+ }
+
+console.log(product.total());
+console.log(product.rating.count);
+console.log(product.cities[1]);
+</script>
