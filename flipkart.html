@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var iphone = {
+            title : "Apple iphone 16(purple, 256 GB",
+            price: 79999,
+            rating: {rate: 4.6, ratings: 104567, review: 240},
+            image: './iphone.png',
+            offers: [              
+                    "Bank OfferFlat ₹50 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹2,500T&C",
+                    "Bank Offer5% cashback on Axis Bank Flipkart Debit Card up to ₹750T&C",
+                    "Bank Offer5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarterT&C",
+                    "No cost EMI ₹2,167/month. Standard EMI also availableView Plans",
+                    "Bank OfferFlat ₹50 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹2,500T&C"
+            ]
+        }
+        function bodyLoad(){
+            document.getElementById("imgProduct").src = iphone.image;
+            document.getElementById("lblTitle").textContent = iphone.title;
+            document.getElementById("lblRatings").innerHTML = `<span class="badage bg-success rounded rounded-1 text-white px-1">${iphone.rating.rate} <span class="bi bi-star-fill "></span></span><span class="fw-bold text-secondary">${iphone.rating.ratings.toLocaleString('en-in')} Ratings & ${iphone.rating.review} reviews</span>`;
+            document.getElementById("lblPrice").innerHTML = `&#8377; ${iphone.price.toLocaleString('en')}`;
+
+
+            iphone.offers.map(function(offer){
+                var li = document.createElement("li");
+                li.className = "bi my-3 bi-tag-fill text-success";
+                li.innerHTML = `<span class="text-secondary">${offer}`;
+                document.querySelector("ul").appendChild(li);
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyLoad()">
+    <div class="row mt-4">
+        <div class="col-3">
+            <img id="imgProduct" width="100%">
+        </div>
+        <div class="col-9">
+            <div class="fs-4 fw-bold" id="lblTitle"></div>
+            <div class="mt-2" id="lblRatings"></div>
+            <div class="mt-4 fw-bold fs-2" id="lblPrice"></div>
+            <div>
+                <h5>Available Offers</h5>
+                <ul class="list-unstyled">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
