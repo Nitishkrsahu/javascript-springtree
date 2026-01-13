@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var courses = [
+            {
+                title: "Mern Stack",
+                facutly: "Jhon",
+                duration: "2 months",
+                fee: 5300,
+                image: "./mern.png"
+            },
+            {
+                title: "AWS",
+                facutly: "Jhon",
+                duration: "2 months",
+                fee: 5300,
+                image: "./aws.png"
+            },
+            {
+                title: "Data Science",
+                facutly: "Jhon",
+                duration: "2 months",
+                fee: 5300,
+                image: "./datascience.png"
+            },
+            {
+                title: "Data Science",
+                facutly: "Jhon",
+                duration: "2 months",
+                fee: 5300,
+                image: "./datascience.png"
+            }
+        ]
+        function bodyLoad(){
+            courses.map(function(course){
+                var tr = document.createElement("tr");
+                var  tdTitle = document.createElement("td");
+                var tdDuration = document.createElement("td");
+                var  tdFee = document.createElement("td");
+                var tdFaculty = document.createElement("td");
+                var  tdImage = document.createElement("td");
+
+                tdTitle.textContent = course.title;
+                tdDuration.textContent = course.duration;
+                tdFee.textContent = course.fee;
+                tdImage.innerHTML = `<img src=${course.image} width="100" height="100">`;
+                tdFaculty.textContent = course.facutly;
+
+                tr.appendChild(tdTitle);
+                tr.appendChild(tdDuration);
+                tr.appendChild(tdFee);
+                tr.appendChild(tdFaculty);
+                tr.appendChild(tdImage);
+
+
+                document.querySelector("tbody").appendChild(tr);
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyLoad()">
+    <h2>Courses</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Preview</th>
+                <th>Title</th>
+                <th>Faculty</th>
+                <th>Duration</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
