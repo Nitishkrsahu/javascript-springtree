@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+            fetch("./data.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+                     
+                    products.map(function (product){
+                        console.log(products);
+                        var tr = document.createElement("tr");
+
+                        var tdName = document.createElement("td");
+                        var tdPrice = document.createElement("td");
+
+                        tdName.innerHTML = product.Name;
+                        tdPrice.innerHTML = product.Price;
+
+                        tr.appendChild(tdName);
+                        tr.appendChild(tdPrice);
+
+                        document.querySelector("tbody").appendChild(tr)
+                    })
+                })
+            .catch(function(error){
+                console.log(error);
+            })
+            .finally(function(){
+                console.log("Ajax Request END");
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>
