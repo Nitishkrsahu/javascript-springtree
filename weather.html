@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        body{
+            height: 100vh;
+        }
+        .weather-container{
+            width: 1000px;
+            height: 600px;
+            background-image: linear-gradient(rgb(205, 236, 81), white, rgb(118, 118, 237));
+        }
+        
+    </style>
+    <script>
+        function bodyload(){
+            fetch('https://api.openweathermap.org/data/2.5/weather?lat=19.86852089886012&lon=75.32789639037257&appid=a7a23a380c90937651eb374033d3a898')
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data);
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" onload="bodyload()">
+    <div>
+        <div class="weather-container">
+            <div class="noshade p-4">
+                <div>
+                    <div class="input-group">
+                        <select class="form-select" onchange="Getweather()" id="1stCities">
+                        <option>select city</option>
+                        <option>Delhi</option>
+                        <option>Hyderabad</option>
+                        <option>Bangalore</option>
+                        <option>Mumbai</option>
+                    </select>
+                    <input type="text" placeholder="Your City Name" class="w-50 form-control" id="txtCity">
+                    <button onclick="SearchClick()" class="btn btn-warning bi bi-search"></button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

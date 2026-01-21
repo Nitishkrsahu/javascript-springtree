@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<style>
+    .image-pop{
+    transition: transform 0.3s ease;
+    }
+
+    .image-pop:hover{
+        transform: scale(1.2);
+    }
+
+</style>
+<script>
+    function bodyLoad(){
+        fetch('https://fakestoreapi.com/products')
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(stores){
+            console.log(stores);
+            stores.map(function(store){
+
+                var div = document.createElement("div");
+                div.className = "card m-2 p-2 w-25"
+                div.style.width = "250px";
+                div.innerHTML = `
+                <h6>${store.title.slice(0,38)}</h6>
+                <div class="card-header">
+                    <img src=${store.image} class="card-img-top image-pop" height="250">
+                </div>
+                <div class="card-body">
+                    <p class="p-0 m-0">${store.description.slice(0, 60)}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center" style="height: 100px">
+                    
+                    <button class="btn btn-warning bi bi-cart4"></button>
+                    <p class="p-0 m-0">&#8377;${store.price}</p>
+                    <button class="btn btn-success">Buy Now</button>
+                </div>
+                `;
+                document.querySelector("main").appendChild(div);
+
+
+
+            //     var tr = document.createElement("tr");
+
+            // var tdId = document.createElement("td");
+            // var tdImage = document.createElement("td");
+            // var tdDes = document.createElement("td");
+            // var tdCat = document.createElement("td");
+            // var tdPrice = document.createElement("td");
+            // var tdRating = document.createElement("td");
+
+            // tdId.innerHTML = store.id;
+            // tdImage.innerHTML = `<img src=${store.image} width="100">`;
+            // tdDes.innerHTML = store.description.slice(0, 60);
+            // tdCat.innerHTML = store.category;
+            // tdPrice.innerHTML = store.price;
+            // tdRating.innerHTML = store.rating.rate;
+
+            // tr.appendChild(tdId);
+            // tr.appendChild(tdImage);
+            // tr.appendChild(tdDes);
+            // tr.appendChild(tdCat);
+            // tr.appendChild(tdPrice);
+            // tr.appendChild(tdRating);
+
+            // document.querySelector("tbody").appendChild(tr);
+            })
+        })
+    }
+</script>
+<body onload="bodyLoad()" class="container-fluid">
+    <h2>Product List</h2>
+
+    <main class="d-flex flex-wrap justify-content-center">
+
+    </main>
+
+    <!-- <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table> -->
+</body>
+</html>
