@@ -18,18 +18,33 @@
         
     </style>
     <script>
-        function bodyload(){
-            fetch('https://api.openweathermap.org/data/2.5/weather?lat=19.86852089886012&lon=75.32789639037257&appid=a7a23a380c90937651eb374033d3a898')
+        function GetWeatherData(city){
+
+            document.getElementById("detailsContainer").style.display = "block";
+            var api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a7a23a380c90937651eb374033d3a898&units=metric`;
+            fetch(api_url)
             .then(function(response){
                 return response.json();
             })
             .then(function(data){
                 console.log(data);
+                document.getElementById("lblCity").innerHTML = data.name;
+                document.getElementById("lblTemp").innerHTML = data.main.temp + "&deg; C";
+                document.getElementById("lblFeel").innerHTML = data.weather[0].main;
+                document.getElementById("lblWind").innerHTML = data.wind.speed + "KMPH"
             })
+        }
+
+        function SearchClick(){
+            var cityName = document.getElementById("txtCity").value;
+            GetWeatherData(cityName)
+        }
+        function Getweather(){
+            GetWeatherData(document.getElementById("1stCities").value);
         }
     </script>
 </head>
-<body class="container-fluid d-flex justify-content-center align-items-center" onload="bodyload()">
+<body class="container-fluid d-flex justify-content-center align-items-center">
     <div>
         <div class="weather-container">
             <div class="noshade p-4">
@@ -45,6 +60,17 @@
                     <input type="text" placeholder="Your City Name" class="w-50 form-control" id="txtCity">
                     <button onclick="SearchClick()" class="btn btn-warning bi bi-search"></button>
                     </div>
+                </div>
+                <div class="mt-4" id="detailsContainer" style="display: none;">
+                    <div id="lblCity" class="my-4 fs-3 fw-bold"></div>
+                    <div>
+                        <span class="bi bi-cloud-haze fs-1"></span>
+                        <span id="lblTemp" class="fs-1 fw-bold"></span>
+                    </div>
+                    <div id="lblFeel" class="d-inline">
+
+                    </div>
+                    <span id="lblWind"></span>
                 </div>
             </div>
             
