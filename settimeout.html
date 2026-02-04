@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function step1(){
+            document.querySelector("p").innerHTML = "30% Volume increased";
+        }
+        function step2(){
+            document.querySelector("p").innerHTML = "60% Volume increased";
+        }
+        function step3(){
+            document.querySelector("p").innerHTML = "Volume Full";
+        }
+        var t1, t2, t3;
+        function VolumeUp(){
+            t1 = setTimeout(step1, 3000);
+            t2 = setTimeout(step2, 6000);
+            t3 = setTimeout(step3, 10000);
+        }
+        function CancelClick(){
+            clearTimeout(t2);
+        }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <button onclick="VolumeUp()" class="bi bi-volume-up-fill">+</button>
+        <button onclick="CancelClick()">Cancel 60%</button>
+        <p></p>
+    </div>
+</body>
+</html>
