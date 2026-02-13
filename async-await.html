@@ -1,0 +1,15 @@
+<script>
+    console.log('Program Start');
+    function Fetch(){
+        async function GetData(){
+            return await [
+                {Name: 'Tv'},
+                {Name: 'Mobile'},
+                {Name: 'Shirt'}
+            ];
+        }
+        console.log(GetData());
+    }
+    setTimeout(Fetch, 0);
+    console.log('Program End');
+</script>

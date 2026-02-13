@@ -1,0 +1,25 @@
+<script>
+    var FetchData = new Promise(function(resolve, reject){
+        var url = prompt("Enter Url");
+        if(url === "fakestore"){
+            resolve("Response data fetched successfully...");
+        }else{
+            reject("Invalid Url - unable to fetch data");
+        }
+    })
+    FetchData.then(function(response){
+        document.write(response);
+    })
+    .then(function(){
+        alert('Your resquest processed successfully');
+    })
+    .then(function(){
+        alert('Response is ready');
+    })
+    .catch(function(error){
+        document.write(error);
+    })
+    .finally(function(){
+        console.log('program End');
+    })
+</script>

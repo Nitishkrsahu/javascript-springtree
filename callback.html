@@ -1,0 +1,10 @@
+<script>
+    function FetchData(url, success, failure){
+        if(url === "fakestore"){
+            success("Response Data received");
+        }else{
+            failure("Unable to Fetch Data - Invalid Url");
+        }
+    }
+    FetchData(prompt("Enter URL"), function(response){document.write(response)}, function(error){document.write(error)})
+</script>
