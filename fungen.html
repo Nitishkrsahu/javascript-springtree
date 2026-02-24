@@ -1,0 +1,16 @@
+<script>
+    function* Iterator(){
+        yield 10,
+        yield "A",
+        yield ["Delhi", "Hyd"],
+        yield {Name: "Tv"}
+    }
+    var data = Iterator();
+    console.log(data.next().value);
+    console.log(data.next().value);
+    console.log(data.next().value);
+    console.log(data.next().value);
+    if(data.next().done === true){
+        console.log("No more data to read");
+    }
+</script>

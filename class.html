@@ -1,0 +1,46 @@
+<!-- <script>
+    class Demo{
+        static s = 0;
+        n = 0;
+        constructor(){
+            Demo.s = Demo.s + 1;
+            this.n = this.n + 1;
+        }
+        print(){
+            document.write(`s=${Demo.s} n=${this.n}<br>`);
+        }
+    }
+
+    let obj1 = new Demo();
+    obj1.print();
+
+    let obj2 = new Demo();
+    obj1.print();
+
+    let obj3 = new Demo();
+    obj1.print();
+
+</script> -->
+
+
+
+<!-- <script>
+    class product {
+        #price = 45000;
+        getprice(){
+            return this.#price;
+        }
+    }
+    let p1 = new product();
+    console.log(p1.getprice());
+    // console.log(p1.#price);
+</script> -->
+
+
+<script>
+    class product {
+        _price = 30000;
+    }
+    let p1 = new product();
+    console.log(p1._price);
+</script>

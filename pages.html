@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import { AdminTitle, Register as AdminRegister} from "./admin.js";
+        import {UserTitle, Register as UserRegister} from "./user.js"
+        document.querySelector("h1").innerHTML = AdminTitle();
+        document.querySelector("p").innerHTML = UserTitle();
+        document.getElementById("lblAdmin").innerHTML = AdminRegister();
+        document.getElementById("lblUser").innerHTML = UserRegister();
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <form>
+        <h3 id="lblAdmin"></h3>
+    </form>
+    <form>
+        <h3 id="lblUser"></h3>
+    </form>
+</body>
+</html>

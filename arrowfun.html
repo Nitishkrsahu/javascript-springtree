@@ -1,0 +1,28 @@
+<!-- <script>
+    var addition = (a, b) =>{
+        document.write(a + b);
+    }
+    addition(2, 4);
+</script> -->
+<!-- <script>
+    var addition = (a, b) => a + b;
+    document.write(addition(5, 4));
+</script> -->
+
+
+<!-- <script>
+    var hello = uname => `Hello! ${uname}`;
+
+    document.write(hello("Gayatri"));
+</script> -->
+
+
+<script>
+    fetch("https://fakestoreapi.com/products/categories")
+    .then(Response => Response.json())
+    .then(categories =>{
+        categories.map(category =>{
+            document.write(`<li>${category}</li>`);
+        })
+    })
+</script>
