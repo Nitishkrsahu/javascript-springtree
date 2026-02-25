@@ -1,0 +1,51 @@
+<!-- <script>
+    var username = prompt("Enter User Name");
+    var password = prompt("Enter Password");
+    var role = prompt("Enter Your role");
+    class Product {
+        _productName;
+        get ProductName() {
+            return this._productName;
+        }
+        set ProductName(newName) {
+            if (username === "gayatri" && password==="1234" && role === "admin") {
+                this._productName = newName;
+            }else{
+                document.write(`Hello! ${username} you are not authorized to set product name`);
+            }
+        }
+    }
+    let obj = new Product();
+    obj.ProductName = prompt("Enter Product Name");
+    if(obj.ProductName){
+        document.write(`Product Name = ${obj.ProductName}`);
+    }
+</script> -->
+
+
+
+<script>
+    class Product{
+        Rating = {
+            Customer : {
+                Hyd :{
+                    Rate: 3.5
+                }
+            },
+            Vendor : {
+                Hyd : {
+                    Rate: 4.6
+                }
+            }
+        }
+        get HydVendorRating(){
+            return this.Rating.Vendor.Hyd.Rate;
+        }
+        set HydVendorRating(newRating){
+            this.Rating.Vendor.Hyd.Rate = newRating;
+        }
+    }
+    let obj = new Product();
+    obj.HydVendorRating = prompt("Enter New Rating for Hyd Vendor");
+    document.write(`Hyd Vendor Rating ${obj.HydVendorRating}`);
+</script>
