@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class HDFC_Bank_Version1 {
+            Personal = "Personal Banking Service";
+            print() {
+                document.write(`${this.Personal}`);
+            }
+        }
+        class HDFC_Bank_Version2 {
+            NRI = "NRI Banking Service";
+            print() {
+                let obj = new HDFC_Bank_Version1();
+                obj.print();
+                document.write(`${this.NRI}<br>`)
+            }
+        }
+        class HDFC_Bank_Version3 {
+            Loans = "Housing and car Loans";
+            print() {
+                let obj = new HDFC_Bank_Version2();
+                obj.print();
+                document.write(`${this.Loans}<br>`)
+            }
+        }
+
+        function InstallClick() {
+            var version = document.querySelector("select").value;
+            switch (version) {
+                case "ver1":
+                    document.write(`<h2>HDFC Version-1 Installed</h2>`);
+                    let obj1 = new HDFC_Bank_Version1();
+                    obj1.print();
+                    break;
+                case "ver2":
+                    document.write(`<h2>HDFC Version-2 Installed</h2>`);
+                    let obj2 = new HDFC_Bank_Version2();
+                    obj2.print();
+                    break;
+                case "ver3":
+                    document.write(`<h2>HDFC Version-3 Installed</h2>`);
+                    let obj3 = new HDFC_Bank_Version3();
+                    obj3.print();
+                    break;
+                default:
+                    document.write("Please Select a version");
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Install Bank Software</h3>
+    <select>
+        <option value="ver1">HDFC Version-1</option>
+        <option value="ver2">HDFC Version-2</option>
+        <option value="ver3">HDFC Version-3</option>
+    </select>
+    <button onclick="InstallClick()">Install</button>
+</body>
+
+</html>
