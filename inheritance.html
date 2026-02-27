@@ -12,19 +12,17 @@
                 document.write(`${this.Personal}<br>`);
             }
         }
-        class HDFC_Bank_Version2 {
+        class HDFC_Bank_Version2 extends HDFC_Bank_Version1{
             NRI = "NRI Banking Service";
             print() {
-                let obj = new HDFC_Bank_Version1();
-                obj.print();
+                super.print();
                 document.write(`${this.NRI}<br>`)
             }
         }
-        class HDFC_Bank_Version3 {
+        class HDFC_Bank_Version3 extends HDFC_Bank_Version2{
             Loans = "Housing and car Loans";
             print() {
-                let obj = new HDFC_Bank_Version2();
-                obj.print();
+                super.print();
                 document.write(`${this.Loans}<br>`)
             }
         }

@@ -1,0 +1,14 @@
+<script>
+    class Super{
+        constructor(msg){
+            console.log(`Super Constructor\n${msg}`);
+        }
+    }
+    class Drived extends Super{
+        constructor(){
+            super('Hello! Welcome to JS');
+            console.log("Derived Constructor");
+        }
+    }
+    let obj = new Drived();
+</script>

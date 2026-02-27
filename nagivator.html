@@ -1,0 +1,22 @@
+<!-- <script>
+    document.write(`Browser Family: ${navigator.appName}<br> Version : ${navigator.appVersion}<br> Platform : ${navigator.platform}<br> Cookies Enabled : ${navigator.cookieEnabled}`);
+</script> -->
+
+
+
+<!-- <script>
+    navigator.geolocation.getCurrentPosition(function(position){
+        document.write(`Latitude: ${position.coords.latitude}<br> longitude: ${position.coords.longitude}`)
+    })
+</script> -->
+
+
+
+<script>
+    navigator.geolocation.getCurrentPosition(function(position){
+        var api_key = "dfdhbjwe7yruhfjbenrdsdjh7";
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}`
+    })
+</script>
